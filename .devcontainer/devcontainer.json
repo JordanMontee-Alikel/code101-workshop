@@ -4,7 +4,7 @@
   // Ready-made image: git, gh, Node, Claude Code and ggshield preinstalled
   // and pinned, with the Claude Code AI hook already configured.
   // Source: image/Dockerfile in the workshop prep folder (not in this repo).
-  "image": "ghcr.io/OWNER/code101-codespace:1",
+  "image": "ghcr.io/jordanmontee-alikel/code101-codespace:1",
   "remoteUser": "vscode",
 
   // Smallest machine is plenty and keeps free-tier usage low.
