@@ -1,19 +1,16 @@
 {
   "name": "GitGuardian Code 101",
 
-  // Python image ships with git + pipx (used to install ggshield).
-  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  // Ready-made image: git, gh, Node, Claude Code and ggshield preinstalled
+  // and pinned, with the Claude Code AI hook already configured.
+  // Source: image/Dockerfile in the workshop prep folder (not in this repo).
+  "image": "ghcr.io/OWNER/code101-codespace:1",
+  "remoteUser": "vscode",
 
-  "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
-    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
-  },
-
-  // Smallest machine is plenty and keeps free-tier usage low (2 cores x 45 min).
+  // Smallest machine is plenty and keeps free-tier usage low.
   "hostRequirements": { "cpus": 2 },
 
-  // Installs ggshield and wires the pre-commit + Claude Code hooks.
+  // Only per-repo step: install the ggshield pre-commit hook (~1 second).
   "postCreateCommand": "bash .devcontainer/post-create.sh",
 
   "customizations": {
@@ -24,7 +21,6 @@
       "settings": {
         "workbench.startupEditor": "none",
         "terminal.integrated.defaultProfile.linux": "bash",
-        "git.enableSmartCommit": true,
         "git.confirmSync": false
       }
     }
