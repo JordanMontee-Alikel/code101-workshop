@@ -2,11 +2,14 @@
 # Runs once when the Codespace is created.
 set -euo pipefail
 
-GGSHIELD_VERSION="1.54.0"   # pinned so every session behaves the same
+GGSHIELD_VERSION="1.55.0"   # pinned so every session behaves the same
 
 echo "==> Installing ggshield ${GGSHIELD_VERSION}"
 pipx install "ggshield==${GGSHIELD_VERSION}"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Repo folder may be owned by a different uid (local Docker bind mounts)
+git config --global --add safe.directory "$PWD"
 
 echo "==> Installing ggshield pre-commit hook (this repo)"
 ggshield install --mode local --hook-type pre-commit --force
