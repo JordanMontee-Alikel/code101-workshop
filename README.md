@@ -11,7 +11,10 @@ In 45 minutes you'll do what developers do every day: change some code, save it 
 | ⌨️ | You type in the terminal yourself |
 | 💻 | Codespace users: what's different for you |
 
-> **Clicking links in the terminal:** hold **Cmd** (Mac) or **Ctrl** (Windows) and click. If a box asks *"Do you want Code to open the external website?"*, click **Open**.
+> **Terminal tips**
+> - **Links:** hold **Cmd** (Mac) or **Ctrl** (Windows) and click. If a box asks *"Do you want Code to open the external website?"*, click **Open**.
+> - **Typing:** click inside the terminal first. If pressing Enter doesn't send your message, click inside it and press Enter again.
+> - If Claude asks *"How is Claude doing this session?"*, press **0** to dismiss it.
 
 ---
 
@@ -22,7 +25,11 @@ At the top of this page, click **Use this template → Create a new repository**
 
 Then click **Create repository** and continue in **your** new repository:
 
-**💻 Codespace:** click **Code → Codespaces → Create codespace on main**. It opens in a new tab and takes about 2 minutes. Then log in to Claude Code ⌨️:
+**💻 Codespace:** click **Code → Codespaces → Create codespace on main**. It opens in a new tab and takes about 2 minutes.
+- If a box asks *"Do you trust the authors of the files in this folder?"*, click **Trust Folder & Continue**.
+- This guide opens as plain text on the left. To read it formatted, right-click `README.md` in the file list → **Open Preview**.
+
+Then log in to Claude Code ⌨️:
 1. Type `claude` in the terminal at the bottom and press Enter.
 2. Press Enter to keep the colours, then Enter again for **"Claude account with subscription"**.
 3. 🖱️ Click the long link (Cmd/Ctrl+click), then click **Authorize**. *(If no tab opens, press `c` to copy the link and paste it into a new browser tab.)*
@@ -87,7 +94,7 @@ The script writes a **fake** AWS key into `config.py`. Claude tells you the comm
 - the **pre-commit hook** blocks the commit on your machine, before anything leaves it;
 - the **AI hook** stops the secret in the error message from being sent to the AI.
 
-*Want to see the pre-commit message itself?* ⌨️ In the second terminal (💻) or any terminal (laptop), type `git add config.py && git commit -m "add config"`.
+*Want to see the pre-commit message itself?* ⌨️ In a terminal **without Claude in it** (💻: the second one, from step 4), type `git add config.py && git commit -m "add config"`.
 
 Now try the AI side directly. Open `config.py`, select **both lines** (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`), copy them, and paste them into Claude Code:
 > *"Is this AWS key still valid? [paste]"*

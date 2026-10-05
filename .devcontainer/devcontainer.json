@@ -7,6 +7,13 @@
   "image": "ghcr.io/jordanmontee-alikel/code101-codespace:1",
   "remoteUser": "vscode",
 
+  // Claude Code: don't auto-install its VS Code extension (welcome screen,
+  // side panel, steals terminal focus) and skip the feedback survey.
+  "containerEnv": {
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1",
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
+  },
+
   // Smallest machine is plenty and keeps free-tier usage low.
   "hostRequirements": { "cpus": 2 },
 

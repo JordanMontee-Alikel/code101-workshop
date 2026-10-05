@@ -14,7 +14,7 @@ ggshield install --mode local --hook-type pre-commit --force
 # Scoped to claude only; other tools keep opening links normally.
 grep -q "alias claude=" ~/.bashrc || echo "alias claude='BROWSER=false claude'" >> ~/.bashrc
 
-# Pre-accept Claude Code's "Do you trust this folder?" screen for this repo
+# Claude Code config: no IDE-extension auto-install, and pre-accept the "Do you trust this folder?" screen for this repo
 # (its default answer is "No, exit", which catches people pressing Enter).
 python3 - "$PWD" <<'PY'
 import json, os, sys
@@ -23,6 +23,7 @@ try:
     data = json.load(open(path))
 except (FileNotFoundError, ValueError):
     data = {}
+data["autoInstallIdeExtension"] = False  # belt and braces with the env var
 data.setdefault("projects", {}).setdefault(sys.argv[1], {})["hasTrustDialogAccepted"] = True
 json.dump(data, open(path, "w"), indent=2)
 PY

@@ -1,0 +1,8 @@
+{
+  // Workspace-level copies of the devcontainer settings: read as soon as the
+  // folder opens (devcontainer settings arrive later, after remote connects).
+  "workbench.editorAssociations": { "*.md": "vscode.markdown.preview.editor" },
+  "chat.disableAIFeatures": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.startupEditor": "none"
+}
