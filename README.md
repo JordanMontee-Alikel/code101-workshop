@@ -19,7 +19,11 @@ At the top of this page, click **Use this template → Create a new repository**
 > **⚠️ Set it to Private.** Your copy will contain a (fake) leaked key, and it must not be public.
 
 Then, in **your** new repository:
-- **💻 Codespace:** click **Code → Codespaces → Create codespace on main**. When the editor opens, type `claude` in the terminal at the bottom and follow its login steps.
+- **💻 Codespace:** click **Code → Codespaces → Create codespace on main**. When the editor opens, log in to Claude Code ⌨️:
+  1. Type `claude` in the terminal at the bottom and press Enter.
+  2. Press Enter to keep the colours, then Enter again for **"Claude account with subscription"**.
+  3. 🖱️ Hold **Cmd** (Mac) or **Ctrl** (Windows) and click the long link, then click **Authorize**. *(If no tab opens, press `c` to copy the link and paste it into a new browser tab.)*
+  4. Copy the code shown on the page, paste it into the terminal and press Enter.
 - **Laptop:** open Claude Code and ask 🤖 *"Clone my GitHub repository `<your-repo-name>` and open it."*
 
 ## 1. Create a GitGuardian account 🖱️
@@ -45,7 +49,7 @@ A browser tab opens. 🖱️ Click **Authorize**.
 ```
 ggshield auth login --method oob
 ```
-1. 🖱️ Cmd/Ctrl+click the link it prints, then click **Authorize**.
+1. 🖱️ Hold **Cmd** (Mac) or **Ctrl** (Windows) and click the link it prints, then click **Authorize**.
 2. Copy the code shown on the page.
 3. Paste it into the terminal and press Enter. *(The code won't appear as you paste, which is normal.)*
 
