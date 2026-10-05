@@ -65,7 +65,9 @@ ggshield auth login --method oob
 1. 🖱️ Click the link it prints (Cmd/Ctrl+click).
 2. Tick **"I started this CLI myself"**, then click **Confirm**.
 3. Copy the code shown on the page, paste it into the terminal and press Enter. *(It shows partly hidden with \*\*\*\*, which is normal.)*
-4. You'll see **"Success! You are now authenticated."** Then switch back to the first terminal (Claude's).
+4. You'll see **"Success! You are now authenticated."** Then switch back to the first terminal (Claude's) and **click inside it** before typing.
+
+> Tip: use the 🖱️ copy button on the code page instead of selecting the code by hand. A partial paste gives *"Cannot create a token"*.
 
 > Red ✗ lines on the page (*"This permission will be skipped"*) and a *"scopes were not granted"* warning in the terminal are normal on a free account. Everything you need works.
 
