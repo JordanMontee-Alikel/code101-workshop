@@ -10,7 +10,7 @@
   // Smallest machine is plenty and keeps free-tier usage low.
   "hostRequirements": { "cpus": 2 },
 
-  // Only per-repo step: install the ggshield pre-commit hook (~1 second).
+  // Per-repo setup (~1 second): pre-commit hook, Claude Code tweaks, welcome.
   "postCreateCommand": "bash .devcontainer/post-create.sh",
 
   "customizations": {
@@ -19,6 +19,13 @@
     },
     "vscode": {
       "settings": {
+        // No "Do you trust the authors?" popup blocking the terminal.
+        "security.workspace.trust.enabled": false,
+        // Hide Copilot chat panel and AI hints: Claude Code is the only assistant here.
+        "chat.disableAIFeatures": true,
+        "workbench.secondarySideBar.defaultVisibility": "hidden",
+        // Open the README formatted, not as raw Markdown.
+        "workbench.editorAssociations": { "*.md": "vscode.markdown.preview.editor" },
         "workbench.startupEditor": "none",
         "terminal.integrated.defaultProfile.linux": "bash",
         "git.confirmSync": false

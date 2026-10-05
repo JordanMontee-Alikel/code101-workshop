@@ -14,6 +14,19 @@ ggshield install --mode local --hook-type pre-commit --force
 # Scoped to claude only; other tools keep opening links normally.
 grep -q "alias claude=" ~/.bashrc || echo "alias claude='BROWSER=false claude'" >> ~/.bashrc
 
+# Pre-accept Claude Code's "Do you trust this folder?" screen for this repo
+# (its default answer is "No, exit", which catches people pressing Enter).
+python3 - "$PWD" <<'PY'
+import json, os, sys
+path = os.path.expanduser("~/.claude.json")
+try:
+    data = json.load(open(path))
+except (FileNotFoundError, ValueError):
+    data = {}
+data.setdefault("projects", {}).setdefault(sys.argv[1], {})["hasTrustDialogAccepted"] = True
+json.dump(data, open(path, "w"), indent=2)
+PY
+
 # postCreateCommand output only goes to the hidden creation log,
 # so greet participants from the terminal itself.
 grep -q "Welcome to Code 101" ~/.bashrc || cat >> ~/.bashrc <<'EOF'
